@@ -20,53 +20,64 @@ var names = [
   'Ioana'
 ];
 
-// var fontName = "MyFontRegular";
-var fontName = "BigSpenderRegular";
+var fontName = "MyFontRegular";
+// var fontName = "BigSpenderRegular";
 
-// start loop through each name
+
 for (var i = 0; i < names.length; i++) {
-  // create a text object with the name in list
+    createNamePacifico(names[i], fontName, textLayer, circleLayer, x, y)
+    y -= 50;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function createNamePacifico(name, font,textLayer,circleLayer, x, y)
+{
+
+
   var textFrame = textLayer.textFrames.add();
-  textFrame.contents = names[i];
+  textFrame.contents = name;
   var firstLetter = textFrame.contents[0];
   // adding the text to the position
   textFrame.position = [x, y];
 
   // setting the font and character size
   var textRange = textFrame.textRange;
-  textRange.characterAttributes.textFont = app.textFonts.getByName(fontName);
+  textRange.characterAttributes.textFont = app.textFonts.getByName("MyFontRegular");
   textRange.characterAttributes.size = 36;
 
-  // //changing the spacing for the first letter depending on the first letter
-  if(firstLetter == 'B')
-  {
-    textFrame.characters[0].characterAttributes.tracking = -140
-  } else if(firstLetter == 'I')
-  {
-    textFrame.characters[0].characterAttributes.tracking = -180
-  } else if(firstLetter == 'D')
-  {
-    textFrame.characters[0].characterAttributes.tracking = -140
-  } else if(firstLetter == 'Q')
-  {
-    textFrame.characters[0].characterAttributes.tracking = -140
-  } else if(firstLetter == 'F')
-  {
-    textFrame.characters[0].characterAttributes.tracking = -150
-  }
+   //changing the spacing for the first letter depending on the first letter
+   if(firstLetter == 'B')
+   {
+     textFrame.characters[0].characterAttributes.tracking = -140
+   } else if(firstLetter == 'I')
+   {
+     textFrame.characters[0].characterAttributes.tracking = -180
+   } else if(firstLetter == 'D')
+   {
+     textFrame.characters[0].characterAttributes.tracking = -140
+   } else if(firstLetter == 'Q')
+   {
+     textFrame.characters[0].characterAttributes.tracking = -140
+   } else if(firstLetter == 'F')
+   {
+     textFrame.characters[0].characterAttributes.tracking = -150
+   }
 
-  // storing the width of the text
+   // storing the width of the text
   var textWidth = textFrame.width;
 
   // creating outlines
   var outlines = textFrame.createOutline();
-
-  // setting the circles parameters
-  var radius = 15;
-  var circle_x = x - 8;
-  var circle_y = y + 20;
-  var circle2_x = x - 14 + textWidth;
-  var circle2_y = y + 18;
 
   // changing the circle parameters depending on the first letter
   if (firstLetter == "H") {
@@ -84,6 +95,13 @@ for (var i = 0; i < names.length; i++) {
     circle_x = x - 8;
   }
 
+
+  // setting the circles parameters
+  var radius = 15;
+  var circle_x = x - 8;
+  var circle_y = y + 20;
+  var circle2_x = x - 14 + textWidth;
+  var circle2_y = y + 18;
 
   // creating the circles
   var circle1 = circleLayer.pathItems.ellipse(
@@ -112,5 +130,13 @@ for (var i = 0; i < names.length; i++) {
   );
 
 
-  y -= 50;
 }
+
+
+
+
+
+
+
+
+
