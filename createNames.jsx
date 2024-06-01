@@ -13,33 +13,33 @@ var x = 300;
 var y = 0;
 
 // the Names to be designed
-// var names = 				[["I", "A"]   ]
-var names = [
-  "Alina",
-  "Betb",
-  "Carolinc",
-  "Delyd",
-  "Elenae",
-  "Feliciaf",
-  "Gabrielag",
-  "Helioh",
-  "Ioanai",
-  "Jennaj",
-  "Kelyk",
-  "Laural",
-  "Mariam",
-  "Nikan",
-  "Oanao",
-  "Paulap",
-  "Ralucar",
-  "Sebys",
-  "Tetit",
-  "Uolou",
-  "Valyv",
-  "Yoanay",
-  "Alex",
-  "Alw",
-  "Zebaz",
+// var names = 				[["Carla", "Ayan"]  ]
+var names = ['Mihaela',
+  'Alina',
+'Betb',
+'Carolinc',
+'Delyd',
+'Elenae',
+'Feliciaf',
+'Gabrielag',
+'Helioh',
+'Ioanai',
+'Jennaj',
+'Kelyk',
+'Laural',
+'Mariam',
+'Nikan',
+'Oanao',
+'Paulap',
+'Ralucar',
+'Sebys',
+'Tetit',
+'Uolou',
+'Valyv',
+'Yoanay',
+'Alex',
+'Alw',
+'Zebaz'
 ];
 var fontName = "MyFontRegular";
 // var fontName = "BigSpenderRegular";
@@ -47,11 +47,11 @@ var fontName = "MyFontRegular";
 for (var i = 0; i < names.length; i++) {
   // create2NameBigSpender(names[i], textLayer, circleLayer, x, y)
   // createNameBigSpender(names[i], textLayer, circleLayer, x, y)
-  //  createNameCassandra(names[i], textLayer, circleLayer, x, y)
+   createNameCassandra(names[i], textLayer, circleLayer, x, y)
   //  createNamePreparation(names[i], textLayer, circleLayer, x, y)
   // createSetInel2Nume(names[i], textLayer, circleLayer, x, y)
   // createNameSTD(names[i], textLayer, circleLayer, x, y)
-  createNameCarrie(names[i], textLayer, circleLayer, x, y);
+  // createNameCarrie(names[i], textLayer, circleLayer, x, y);
   y -= 80;
 }
 
@@ -75,13 +75,11 @@ function create2NameBigSpender(name, textLayer, circleLayer, x, y) {
 
   // setting the font and character size
   var textRange1 = textFrame.textRange;
-  textRange1.characterAttributes.textFont =
-    app.textFonts.getByName("BigSpenderColier");
+  textRange1.characterAttributes.textFont = app.textFonts.getByName("BigSpenderColier");
   textRange1.characterAttributes.size = 28;
 
   var textRange2 = textFrame2.textRange;
-  textRange2.characterAttributes.textFont =
-    app.textFonts.getByName("BigSpenderColier");
+  textRange2.characterAttributes.textFont = app.textFonts.getByName("BigSpenderColier");
   textRange2.characterAttributes.size = 28;
 
   //changing the spacing for the first letter depending on the first letter
@@ -487,7 +485,7 @@ function createNameCassandra(name, textLayer, circleLayer, x, y) {
   textRange.characterAttributes.textFont = app.textFonts.getByName(
     "CassandraColierRegular"
   );
-  textRange.characterAttributes.size = 25;
+  textRange.characterAttributes.size = 22;
 
   //changing the spacing for the first letter depending on the first letter
   if (firstLetter == "F") {
@@ -509,79 +507,35 @@ function createNameCassandra(name, textLayer, circleLayer, x, y) {
   // setting the circles parameters
   var radius = 10;
   var circle_x = x + 0;
-  var circle_y = y + 25;
-  var circle2_x = x - 9 + textWidth;
+  var circle_y = y + 22;
+  var circle2_x = x - 8 + textWidth;
   var circle2_y = y + 10;
 
   // changing the circle parameters depending on the first letter
-  if (firstLetter == "A") {
-    circle_x = circle_x + 10;
-    circle_y = circle_y - 10;
-  } else if (firstLetter == "B") {
-    circle_x = circle_x + 2;
-  } else if (firstLetter == "C") {
-    circle_x = circle_x + 6;
-  } else if (firstLetter == "D") {
-    circle_x = circle_x + 3;
-  } else if (firstLetter == "E") {
-    circle_x = circle_x - 3;
-    circle_y = circle_y - 8;
-  } else if (firstLetter == "E") {
-    circle_x = circle_x + 1;
-  } else if (firstLetter == "G") {
-    circle_x = circle_x + 2;
-    circle_y = circle_y - 3;
-  } else if (firstLetter == "H") {
-    circle_x = circle_x + 2;
-    circle_y = circle_y - 3;
-  } else if (firstLetter == "I") {
-    circle_x = circle_x + 3;
-    circle_y = circle_y - 3;
-  } else if (firstLetter == "J") {
-    circle_x = circle_x + 2;
-    circle_y = circle_y - 3;
-  } else if (firstLetter == "K") {
-    circle_x = circle_x + 2;
-  } else if (firstLetter == "L") {
-    circle_x = circle_x + 2;
-    circle_y = circle_y - 5;
-  } else if (firstLetter == "M") {
-    circle_x = circle_x + 2;
-  } else if (firstLetter == "N") {
-    circle_x = circle_x + 2;
-  } else if (firstLetter == "O") {
-    circle_x = circle_x + 2;
-  } else if (firstLetter == "P") {
-    circle_x = circle_x - 1;
-  } else if (firstLetter == "R") {
-    circle_x = circle_x + 2;
-  } else if (firstLetter == "S") {
-    circle_x = circle_x + 8;
-    circle_y = circle_y - 5;
-  } else if (firstLetter == "U") {
-    circle_x = circle_x - 5;
-    circle_y = circle_y - 2;
-  } else if (firstLetter == "V") {
-    circle_x = circle_x + 1;
-  } else if (firstLetter == "Z") {
-    circle_x = circle_x + 1;
-    circle_y = circle_y - 4;
+  if (letterIsInArray(firstLetter, ["A"])) {
+    circle_x = circle_x + 7;
+    circle_y = circle_y - 9;
+  } else if(letterIsInArray(firstLetter, ["C", "G", "H", "J", "Z"])) {
+    circle_y -= 3;
+  } else if(letterIsInArray(firstLetter, ["E"])) {
+    circle_x -= 6;
+    circle_y -= 2;
+  } else if(letterIsInArray(firstLetter, ["I", "L"])) {
+    circle_y -= 4;
+  } else if(letterIsInArray(firstLetter, ["P", "U"])) {
+    circle_x -= 2;
+  } else if(letterIsInArray(firstLetter, ["S"])) {
+    circle_x += 6;
+    circle_y -= 3;
   }
 
+
   // changing the circle parameters depending on the last letter
-  if (lastLetter == "b") {
+  if (letterIsInArray(lastLetter, ["h", "k", "d"])) {
     circle2_x += 2;
-  } else if (lastLetter == "c") {
-    circle2_x += 1;
-  } else if (lastLetter == "d") {
-    circle2_x += 2;
-  } else if (lastLetter == "l") {
+  } else if(letterIsInArray(lastLetter, ["l"])) {
     circle2_x += 5;
-  } else if (lastLetter == "t") {
-    circle2_y += 12;
-  } else if (lastLetter == "v") {
-    circle2_x += 2;
-  }
+  } 
 
   // creating the circles
   var circle1 = circleLayer.pathItems.ellipse(
@@ -1026,7 +980,7 @@ function createNameCarrie(name, textLayer, circleLayer, x, y) {
   var textRange = textFrame.textRange;
   textRange.characterAttributes.textFont =
     app.textFonts.getByName("CounselorScript");
-  textRange.characterAttributes.size = 44;
+  textRange.characterAttributes.size = 29;
 
   for (var i = 0; i < name.length; i++) {
     var currentLetter = name[i];
@@ -1066,38 +1020,38 @@ function createNameCarrie(name, textLayer, circleLayer, x, y) {
   // setting the circles parameters
   var radius = 10;
   var circle_x = x - 4;
-  var circle_y = y + 15;
+  var circle_y = y + 10;
   var circle2_x = x - 8 + textWidth;
-  var circle2_y = y + 10;
+  var circle2_y = y + 8;
 
   // changing the circle parameters depending on the first letter
   if (letterIsInArray(firstLetter, ["A", "N"])) {
-    circle_x += 7;
+    circle_x += 4;
   } else if (firstLetter == "M") {
-    circle_x += 9;
+    circle_x += 5;
   } else if (letterIsInArray(firstLetter, ["C", "D", "G", "U", "V"])) {
-    circle_x -= 3;
+    circle_x -= 4;
   } else if (letterIsInArray(firstLetter, ["I", "S"])) {
-    circle_x += 2;
+    circle_x += 0;
   } else if (letterIsInArray(firstLetter, ["O"])) {
-    circle_x -= 2;
+    circle_x -= 3;
   } else if (letterIsInArray(firstLetter, ["Y"])) {
     circle_x -= 5;
   }
 
   // changing the circle parameters depending on the last letter
   if (letterIsInArray(lastLetter, ["b", "c", "e", "g"])) {
-    circle2_x += 6;
+    circle2_x += 5;
   } else if (letterIsInArray(lastLetter, ["d"])) {
-    circle2_x += 1;
-  } else if (letterIsInArray(lastLetter, ["f", "k", "r", "s", "t"])) {
-    circle2_x += 2;
-  } else if (letterIsInArray(lastLetter, ["i", "o", "p", "u", "v", "y", "z"])) {
+    circle2_x += 4;
+  } else if (letterIsInArray(lastLetter, ["f", "t"])) {
+    circle2_x += 6;
+  } else if (letterIsInArray(lastLetter, [ "k", "r", "s"])) {
+    circle2_x += 3;
+  } else if (letterIsInArray(lastLetter, ["i", "o", "p", "u", "v", "y", "z", "l"])) {
     circle2_x += 4;
   } else if (letterIsInArray(lastLetter, ["m", "n"])) {
-    circle2_x -= 4;
-  } else if (letterIsInArray(lastLetter, ["m", "n"])) {
-    circle2_x -= 4;
+    circle2_x -= 2;
   } else if (letterIsInArray(lastLetter, ["w"])) {
     circle2_x -= 2;
   }
